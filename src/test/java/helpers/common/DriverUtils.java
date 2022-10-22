@@ -1,10 +1,10 @@
-package helpers;
+package helpers.common;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static org.openqa.selenium.logging.LogType.BROWSER;
 
 import com.codeborne.selenide.Selenide;
-import config.Project;
+import config.ui.Project;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
@@ -16,11 +16,6 @@ import org.slf4j.LoggerFactory;
 
 public class DriverUtils {
     public static final Logger LOGGER = LoggerFactory.getLogger(DriverUtils.class);
-
-
-    public static String getSessionId() {
-        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
-    }
 
     public static byte[] getScreenshotAsBytes() {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
@@ -41,6 +36,11 @@ public class DriverUtils {
         }
         return null;
     }
+
+    public static String getSessionId() {
+        return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
+    }
+
 
     public static String getConsoleLogs() { // todo refactor
         return String.join("\n", Selenide.getWebDriverLogs(BROWSER));

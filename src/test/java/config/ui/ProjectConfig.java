@@ -1,9 +1,9 @@
-package config;
+package config.ui;
 
 import org.aeonbits.owner.Config;
 
 @Config.Sources({
-    "classpath: config/local.properties"
+    "classpath:config/ui.properties"
 })
 public interface ProjectConfig extends Config {
 
@@ -12,4 +12,10 @@ public interface ProjectConfig extends Config {
     String remoteDriverUrl();
 
     String videoStorage();
+
+    String browser();
+
+    String browserVersion();
+
+    String browserSize();
 }

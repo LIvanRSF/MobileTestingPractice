@@ -1,35 +1,42 @@
-package tests;
+package tests.ui;
 
+import static io.qameta.allure.Allure.step;
+
+import com.codeborne.selenide.Selenide;
 import com.codeborne.selenide.logevents.SelenideLogger;
-import config.Project;
-import helpers.AllureAttachments;
-import helpers.DriverUtils;
+import config.ui.Project;
+import helpers.common.AllureAttachments;
+import drivers.DriverSettings;
+import helpers.common.DriverUtils;
 import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 
-public class TestBase {
+public class TestBaseUi {
 
     @BeforeAll
-    static void setUp() {
-
+    public static void setUp() {
+        DriverSettings.configure();
     }
 
     @BeforeEach
-    void beforeEach() {
+    public void beforeEach() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach
-    void afterEach() {
+    public void afterEach() {
         String sessionId = DriverUtils.getSessionId();
-        if (Project.isVideoOn()) {
-            AllureAttachments.addVideo(sessionId);
-        }
 
         AllureAttachments.addScreenshotAs("Final screenshot");
         AllureAttachments.addPageSource();
         AllureAttachments.addBrowserConsoleLogs();
+
+        step("Close driver", Selenide::closeWebDriver);
+
+        if (Project.isVideoOn()) {
+            AllureAttachments.addVideo(sessionId);
+        }
     }
 }

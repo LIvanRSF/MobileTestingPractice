@@ -1,13 +1,16 @@
-package helpers;
+package helpers.common;
 
 import static com.codeborne.selenide.Selenide.sleep;
+import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
+import helpers.Browserstack;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -31,6 +34,13 @@ public class AllureAttachments {
     @Attachment(value = "Page source", type = "text/html")
     public static byte[] addPageSource() {
         return DriverUtils.getPageSourceAsBytes();
+    }
+
+    @Attachment(value = "Video", type = "text/html", fileExtension = ".html")
+    public static String video(String sessionId) {
+        return "<html><body><video width='100%' height='100%' controls autoplay><source src='"
+            + Browserstack.videoUrl(sessionId)
+            + "' type='video/mp4'></video></body></html>";
     }
 
     public static void addVideo(String sessionId) {
