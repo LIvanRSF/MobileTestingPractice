@@ -1,7 +1,6 @@
 package helpers.common;
 
 import static com.codeborne.selenide.Selenide.sleep;
-import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 import helpers.Browserstack;
 import io.qameta.allure.Allure;
@@ -10,7 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
