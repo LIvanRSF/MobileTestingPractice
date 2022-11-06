@@ -1,4 +1,4 @@
-package config.mobile;
+package config.mobile.browserstack;
 
 import org.aeonbits.owner.ConfigFactory;
 

@@ -1,7 +1,7 @@
-package drivers;
+package drivers.mobiledrivers;
 
 import com.codeborne.selenide.WebDriverProvider;
-import config.mobile.BrowserStack;
+import config.mobile.browserstack.BrowserStack;
 import java.net.MalformedURLException;
 import java.net.URL;
 import org.openqa.selenium.Capabilities;
@@ -16,18 +16,14 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         MutableCapabilities mutableCapabilities = new MutableCapabilities();
         mutableCapabilities.merge(capabilities);
 
-        String login = BrowserStack.config.login();
-        String password = BrowserStack.config.password();
-        String app = BrowserStack.config.app();
-
-        mutableCapabilities.setCapability("browserstack.user", login);
-        mutableCapabilities.setCapability("browserstack.key", password);
-        mutableCapabilities.setCapability("app", app);
-        mutableCapabilities.setCapability("device", "Google Pixel 3");
-        mutableCapabilities.setCapability("os_version", "9.0");
-        mutableCapabilities.setCapability("project", "MobileTestingPractice");
-        mutableCapabilities.setCapability("build", "browserstack-build-1");
-        mutableCapabilities.setCapability("name", "MobileTestPractice");
+        mutableCapabilities.setCapability("browserstack.user", BrowserStack.config.login());
+        mutableCapabilities.setCapability("browserstack.key", BrowserStack.config.password());
+        mutableCapabilities.setCapability("app", BrowserStack.config.app());
+        mutableCapabilities.setCapability("device", BrowserStack.config.device());
+        mutableCapabilities.setCapability("os_version", BrowserStack.config.osVersion());
+        mutableCapabilities.setCapability("project", BrowserStack.config.project());
+        mutableCapabilities.setCapability("build", BrowserStack.config.build());
+        mutableCapabilities.setCapability("name", BrowserStack.config.name());
 
         return new RemoteWebDriver(getBrowserstackUrl(), mutableCapabilities);
     }

@@ -13,6 +13,7 @@ def allureVersion = "2.18.1",
     appiumVersion = "8.1.1",
     javaFakerVersion = "1.0.2",
     ownerVersion = "1.0.12",
+    commonsIoVersion = "2.11.0",
     assertjVersion = "3.19.0",
     slf4jVersion = "1.7.32",
     junitVersion = "5.9.0"
@@ -32,8 +33,7 @@ allure {
 }
 
 dependencies {
-    testImplementation(
-        "org.aspectj:aspectjweaver:1.9.6",
+    testImplementation("org.aspectj:aspectjweaver:1.9.6",
         "com.codeborne:selenide:$selenideVersion",
         "io.qameta.allure:allure-selenide:$allureVersion",
         "io.rest-assured:rest-assured:$restAssuredVersion",
@@ -41,6 +41,7 @@ dependencies {
         "com.github.javafaker:javafaker:$javaFakerVersion",
         "org.aeonbits.owner:owner:$ownerVersion",
         "org.assertj:assertj-core:$assertjVersion",
+        "commons-io:commons-io:$commonsIoVersion",
         "org.slf4j:slf4j-simple:$slf4jVersion",
         "org.junit.jupiter:junit-jupiter:$junitVersion")
 }
@@ -55,19 +56,17 @@ tasks.withType(Test) {
     systemProperties(System.getProperties())
     useJUnitPlatform()
 
-    if (System.getProperty("threads") != null) {
-        systemProperties += ['junit.jupiter.execution.parallel.enabled'                 : true,
-                             'junit.jupiter.execution.parallel.mode.default'            : 'concurrent',
-                             'junit.jupiter.execution.parallel.mode.classes.default'    : 'concurrent',
-                             'junit.jupiter.execution.parallel.config.strategy'         : 'fixed',
-                             'junit.jupiter.execution.parallel.config.fixed.parallelism': System.getProperty("threads").toInteger()]
-    }
-
     testLogging {
         lifecycle {
             //            events "started", "failed"
             events "started", "skipped", "failed", "standard_error", "standard_out"
             exceptionFormat "short"
         }
+    }
+}
+
+task android(type: Test) {
+    useJUnitPlatform {
+        includeTags 'android'
     }
 }

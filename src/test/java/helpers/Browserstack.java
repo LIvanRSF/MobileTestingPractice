@@ -5,7 +5,7 @@ import static java.lang.String.format;
 import static specs.Specifications.baseRequestSpec;
 import static specs.Specifications.baseResponseSpec;
 
-import config.mobile.BrowserStack;
+import config.mobile.browserstack.BrowserStack;
 
 public class Browserstack {
     public static String videoUrl (String sessionId) {
