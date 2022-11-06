@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 public class MobileTests extends TestBaseMobile {
 
     @DisplayName("Testing mobile app searching")
-    @Tag("")
+    @Tag("android")
     @Test
     void mobileWikiAppSearchTest() {
         step("Type skip", () ->
@@ -47,7 +47,7 @@ public class MobileTests extends TestBaseMobile {
     }
 
     @DisplayName("Testing mobile app searching and open the article")
-    @Tag("")
+    @Tag("android")
     @Test
     void mobileWikiAppOpenTinkoffArticleTest() {
         step("Type skip", () ->
