@@ -17,11 +17,11 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class TestBaseMobile {
 
-   // static String deviceHost = System.getProperty("deviceHost");
+    static String deviceHost = System.getProperty("deviceHost");
 
     @BeforeAll
     static void setUp() {
-/*        switch (deviceHost) {
+        switch (deviceHost) {
             case ("browserstack"):
                 Configuration.browser = BrowserstackMobileDriver.class.getName();
                 break;
@@ -33,8 +33,7 @@ public class TestBaseMobile {
                 break;
             default:
                 throw new RuntimeException();
-        }*/
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        }
         Configuration.browserSize = null;
     }
 
@@ -48,15 +47,15 @@ public class TestBaseMobile {
 
     @AfterEach
     public void afterEach() {
-/*        String sessionId = DriverUtils.getSessionId();
+        String sessionId = DriverUtils.getSessionId();
 
         AllureAttachments.addScreenshotAs("Final screenshot");
         AllureAttachments.addPageSource();
 
         step("Close driver", Selenide::closeWebDriver);
 
-        //if (deviceHost.equals("browserstack")) {
+        if (deviceHost.equals("browserstack")) {
             AllureAttachments.video(sessionId);
-        //}*/
+        }
     }
 }
