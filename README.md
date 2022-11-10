@@ -16,7 +16,7 @@
 + [Android Studio. Эмулятор мобильных устройств](#AndroidStudio)
 + [Отчет о результатах тестирования в Allure Report](#AllureReport)
 + [Уведомление в Telegram при помощи Alert bot](#Telegram)
-+ [Выполнение теста на Browserstack](#Browserstack)
++ [Видео выполнение теста на Browserstack](#Browserstack)
 
 <h1 align="left">
 <a name="Technology"><i>Технологии и инструменты</i></a>
@@ -24,7 +24,7 @@
 
 
 <p align="center">  
-<a href="https://www.jetbrains.com/idea/"><img src="images/technologies/intelij_IDEA.svg" width="50" height="50"  alt="IDEA"/></a>  
+<a href="https://www.jetbrains.com/idea/"><img src="images/technologies/intelij_idea.svg" width="50" height="50"  alt="IDEA"/></a>  
 <a href="https://www.java.com/"><img src="images/technologies/java.svg" width="50" height="50"  alt="Java"/></a>  
 <a href="https://github.com/"><img src="images/technologies/github.svg" width="50" height="50"  alt="Github"/></a>  
 <a href="https://junit.org/junit5/"><img src="images/technologies/junit5.svg" width="50" height="50"  alt="JUnit 5"/></a>  
@@ -125,7 +125,7 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 </p>
 
 <h1 align="left">
-<img src="images/technologies/Browserstack.png" width="25" height="25" alt="Browserstack"/> <a name="Browserstack"><i>Пример выполнения теста на Browserstack</i></a>
+<img src="images/technologies/Browserstack.png" width="25" height="25" alt="Browserstack"/> <a name="Browserstack"><i>Видео выполнение теста на Browserstack</i></a>
 </h1>
 
 ### *Видео*
