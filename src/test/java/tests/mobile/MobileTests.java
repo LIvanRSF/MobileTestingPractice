@@ -12,11 +12,11 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
+@Tag("androidTests")
 public class MobileTests extends TestBaseMobile {
 
-    @DisplayName("Testing mobile app searching")
-    @Tag("android")
     @Test
+    @DisplayName("Testing mobile app searching")
     void mobileWikiAppSearchTest() {
         step("Type skip", () ->
             $(AppiumBy.id("org.wikipedia.alpha:id/fragment_onboarding_skip_button")).click());
@@ -31,9 +31,8 @@ public class MobileTests extends TestBaseMobile {
                 .shouldHave(sizeGreaterThan(0)));
     }
 
-    @DisplayName("Testing mobile app searching exact article")
-    @Tag("android")
     @Test
+    @DisplayName("Testing mobile app searching exact article")
     void mobileWikiAppSearchTinkoffBankArticleTest() {
         step("Type skip", () ->
             $(AppiumBy.id("fragment_onboarding_skip_button")).click());
@@ -45,9 +44,8 @@ public class MobileTests extends TestBaseMobile {
         });
     }
 
-    @DisplayName("Testing mobile app searching and open the article")
-    @Tag("android")
     @Test
+    @DisplayName("Testing mobile app searching and open the article")
     void mobileWikiAppOpenTinkoffArticleTest() {
         step("Type skip", () ->
             $(AppiumBy.id("fragment_onboarding_skip_button")).click());
@@ -61,7 +59,7 @@ public class MobileTests extends TestBaseMobile {
             $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description"))
                 .findBy(text("Russian bank")).click());
 
-        step("The article shoud have text History", () ->
+        step("The article should have text History", () ->
             $$(AppiumBy.id("History")).findBy(Condition.text("History")));
     }
 }
