@@ -12,6 +12,8 @@
 + [Автоматизированные тест кейсы](#TestCases)
 + [Запуск тестов в Jenkins](#Jenkins)
 + [Команды для запуска из терминала](#SystemProperty)
++ [Appium. Инструмент для мобильного тестирования](#Appium)
++ [Android Studio. Эмулятор мобильных устройств](#AndroidStudio)
 + [Отчет о результатах тестирования в Allure Report](#AllureReport)
 + [Уведомление в Telegram при помощи Alert bot](#Telegram)
 + [Выполнение теста на Browserstack](#Browserstack)
