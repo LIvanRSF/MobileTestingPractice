@@ -14,10 +14,12 @@ import io.qameta.allure.selenide.AllureSelenide;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
+import pages.WikiSearchPage;
 
 public class TestBaseMobile {
 
     static String deviceHost = System.getProperty("deviceHost");
+    WikiSearchPage wiki = new WikiSearchPage();
 
     @BeforeAll
     static void setUp() {
@@ -34,6 +36,7 @@ public class TestBaseMobile {
             default:
                 throw new RuntimeException();
         }
+        Configuration.browser = BrowserstackMobileDriver.class.getName();
         Configuration.browserSize = null;
     }
 
