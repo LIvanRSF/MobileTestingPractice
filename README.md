@@ -31,7 +31,7 @@
 <a href="https://github.com/appium/appium-inspector/raw/main/docs/icon.png"><img src="images/technologies/AppiumInspectorIcon.png" width="50" height="50"  alt="Appium Inspector"/></a>  
 <a href="https://github.com/allure-framework/allure2"><img src="images/technologies/Allure.svg" width="50" height="50"  alt="Allure"/></a> 
 <a href="https://avatars.githubusercontent.com/u/3221291?s=200&v=4"><img src="images/technologies/Appium.svg" width="50" height="50"  alt="Appium"/></a>  
-<a href="https://cdn.worldvectorlogo.com/logos/android-studio-1.svg"><img src="images/technologies/AndroidStudioLogo.png" width="50" height="50"  alt="AndroidStudio"/></a>  
+<a href="https://cdn.worldvectorlogo.com/logos/android-studio-1.svg"><img src="images/technologies/android-studio-1.svg" width="50" height="50"  alt="AndroidStudio"/></a>  
 <a href="https://www.jenkins.io/"><img src="images/technologies/Jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
 </p>
 
@@ -76,7 +76,18 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 
 > *Обеспечение прогона автотестов на эмуляторе или реальном устройстве*
 
-<img src="https://user-images.githubusercontent.com/72714071/189983519-dd14ecaf-914b-47a7-9e47-ffb885634169.png" alt="Appium">
+### *Appium Server*
+<img src="images/screenshots/AppiumServer.png" alt="Appium">
+
+### *Appium Inspector*
+<img src="images/screenshots/AppiumInspector.png" alt="Appium">
+
+<a id="AndroidStudio"></a>
+## <img alt="AndroidStudio" height="50" src="images/technologies/android-studio-1.svg" width="50"/>AndroidStudio</a>
+
+> *Эмулятор мобильных устройств*
+
+<img src="images/screenshots/AndroidStudioMain.png" alt="Appium">
 
 <h1 align="left">
 <img src="images/technologies/Allure.svg" width="25" height="25" alt="Allure_Report"/>  <a name="AllureReport"><i>Отчет о результатах тестирования в Allure</i></a>
@@ -108,7 +119,7 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 </h1>
 
 <p align="center">  
-<img title="Telegram notification" src="images/.png">  
+<img title="Telegram notification" src="images/screenshots/TelegrammReport.png">  
 </p>
 
 <h1 align="left">
