@@ -1,25 +1,27 @@
-<h2 align="center">Проект по мобильной автоматизации для приложения Wikipedia <a target="_blank" href="https://www.wikipedia.org/"></a> </h2>
+<h2 align="center">Automated tests for the Wikipedia mobile app <a target="_blank" href="https://www.wikipedia.org/"></a> </h2>
 
 <p align="center">
 <img title="Wikipedia" src="images/screenshots/WikipediaLogo.png">
 </p>
 
-<a name="наверх"></a>
+<a name="up"></a>
 
-# :green_book: *Содержание*
+# :green_book: *Content*
 
-+ [Технологии и инструменты](#Technology)
-+ [Автоматизированные тест кейсы](#TestCases)
-+ [Запуск тестов в Jenkins](#Jenkins)
-+ [Команды для запуска из терминала](#SystemProperty)
-+ [Appium. Инструмент для мобильного тестирования](#Appium)
-+ [Android Studio. Эмулятор мобильных устройств](#AndroidStudio)
-+ [Отчет о результатах тестирования в Allure Report](#AllureReport)
-+ [Уведомление в Telegram при помощи Alert bot](#Telegram)
-+ [Видео выполнение теста на Browserstack](#Browserstack)
++ [Technology stack](#Technology)
++ [Test cases](#TestCases)
++ [Jenkins build](#Jenkins)
++ [Launch from the terminal](#SystemProperty)
++ [Appium](#Appium)
++ [Android Studio. Mobile device emulator](#AndroidStudio)
++ [Allure Report integration](#AllureReport)
++ [Notifications on Telegram](#Telegram)
++ [Video examples from Browserstack](#Browserstack)
+
+
 
 <h1 align="left">
-<a name="Technology"><i>Технологии и инструменты</i></a>
+<a name="Technology"><i>Technology stack</i></a>
 </h1>
 
 
@@ -30,8 +32,8 @@
 <a href="https://junit.org/junit5/"><img src="images/technologies/junit5.svg" width="50" height="50"  alt="JUnit 5"/></a>  
 <a href="https://gradle.org/"><img src="images/technologies/gradle.svg" width="50" height="50"  alt="Gradle"/></a>  
 <a href="https://selenide.org/"><img src="images/technologies/selenide.svg" width="50" height="50"  alt="Selenide"/></a>  
-<a href="https://github.com/appium/appium-inspector/raw/main/docs/icon.png"><img src="images/technologies/AppiumInspectorIcon.png" width="50" height="50"  alt="Appium Inspector"/></a>  
 <a href="https://github.com/allure-framework/allure2"><img src="images/technologies/allure.svg" width="50" height="50"  alt="Allure"/></a> 
+<a href="https://github.com/appium/appium-inspector/raw/main/docs/icon.png"><img src="images/technologies/AppiumInspectorIcon.png" width="50" height="50"  alt="Appium Inspector"/></a>  
 <a href="https://avatars.githubusercontent.com/u/3221291?s=200&v=4"><img src="images/technologies/Appium.svg" width="50" height="50"  alt="Appium"/></a>  
 <a href="https://cdn.worldvectorlogo.com/logos/android-studio-1.svg"><img src="images/technologies/android-studio-1.svg" width="50" height="50"  alt="AndroidStudio"/></a>  
 <a href="https://www.jenkins.io/"><img src="images/technologies/jenkins.svg" width="50" height="50"  alt="Jenkins"/></a>  
@@ -39,44 +41,44 @@
 
 
 <h1 align="left">
-<a name="TestCases"><i>Автоматизированные тест кейсы</i></a>
+<a name="TestCases"><i>Test cases</i></a>
 </h1>
 
-- :white_check_mark: Проверка функционала поиска в Wikipedia
-- :white_check_mark: Проверка поиска определенной статьи в приложении
-- :white_check_mark: Проверка наличия определенного заголовка в статье
+- :white_check_mark: Check search functional
+- :white_check_mark: Check search of exact article
+- :white_check_mark: Check exact article header
 
 <h1 align="left">
-<img src="images/technologies/jenkins.svg" width="25" height="25" alt="Jenkins"/>  <a name="Jenkins"><i>Запуск тестов в Jenkins</i></a>
+<img src="images/technologies/jenkins.svg" width="25" height="25" alt="Jenkins"/>  <a name="Jenkins"><i>Jenkins build</i></a>
 </h1>
 
-<a target="_blank" href="https://jenkins.autotests.cloud/job/MobilePracticeWithRealDevice/1/">**Сборка в Jenkins**</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/MobilePracticeWithRealDevice/1/">**build link**</a>
 <p align="center">  
 <a href="https://jenkins.autotests.cloud/job/qa_guru_diplom_Mobile_tests/"><img src="images/screenshots/JenkinsMobileTestsBuild.png" alt="Jenkins"/></a>  
 </p>
 
 <h1 align="left">
-<img src="images/technologies/terminale.png" width="25" height="25" alt="SystemProperty"/><a name="SystemProperty"><i>Команды для запуска из терминала</i></a>
+<img src="images/technologies/terminale.png" width="25" height="25" alt="SystemProperty"/><a name="SystemProperty"><i>Launch from the terminal</i></a>
 </h1>
 
 
-***Локальный запуск:***
+***Local run:***
 
 ```bash  
 gradle clean androidTests -DdeviceHost=${DEVICE_HOST}
 ```
 
-***Удалённый запуск через Jenkins:***
+***Remote run with Jenkins:***
 
 ```bash  
 clean androidTests -DdeviceHost=${DEVICE_HOST}
 ```
-> `${DEVICE_HOST}` - устройство для прогона тестов [ *browserstack* , *emulator* , *real*  ]
+> `${DEVICE_HOST}` - test run device [ *browserstack* , *emulator* , *real*  ]
 
 <a id="appium"></a>
 ## <img alt="Appium" height="50" src="images/technologies/Appium.svg" width="50"/>Appium</a>
 
-> *Обеспечение прогона автотестов на эмуляторе или реальном устройстве*
+> *Appium is an open source test automation framework for use with native, hybrid and mobile web apps.*
 
 ### *Appium Server*
 <img src="images/screenshots/AppiumServer.png" alt="Appium">
@@ -87,37 +89,37 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 <a id="AndroidStudio"></a>
 ## <img alt="AndroidStudio" height="50" src="images/technologies/android-studio-1.svg" width="50"/>AndroidStudio</a>
 
-> *Эмулятор мобильных устройств*
+> *Mobile emulator*
 
 <img src="images/screenshots/AndroidStudioMain.png" alt="Appium">
 
 <h1 align="left">
-<img src="images/technologies/allure.svg" width="25" height="25" alt="Allure_Report"/>  <a name="AllureReport"><i>Отчет о результатах тестирования в Allure</i></a>
+<img src="images/technologies/allure.svg" width="25" height="25" alt="Allure_Report"/>  <a name="AllureReport"><i>Allure Report integration</i></a>
 </h1>
 
-<a target="_blank" href="https://jenkins.autotests.cloud/job/MobilePracticeWithRealDevice/1/allure/">**Allure отчёт в Jenkins**</a>
+<a target="_blank" href="https://jenkins.autotests.cloud/job/MobilePracticeWithRealDevice/1/allure/">**Allure report link**</a>
 <p align="center">
 
-### *Основная страница отчёта*
+### *Main page*
 
 <p align="center">  
 <img title="Allure Overview Dashboard" src="images/screenshots/AllureReportMainPage.png">  
 </p>  
 
-### *Тест кейсы*
+### *Test cases*
 
 <p align="center">  
 <img title="Allure Tests" src="images/screenshots/AllureReportTestSuits.png">  
 </p>
 
-### *Графики*
+### *Graphs*
 
  <p align="center">  
 <img title="Allure Graphics" src="images/screenshots/AllureReportGraphs.png">  
 </p>
 
 <h1 align="left">
-<img src="images/technologies/telegram.svg" width="25" height="25"  alt="Allure"/> <a name="Telegram"><i>Уведомление в Telegram при помощи Alert bot</i></a>
+<img src="images/technologies/telegram.svg" width="25" height="25"  alt="Allure"/> <a name="Telegram"><i>Telegram notifications with Alert bot</i></a>
 </h1>
 
 <p align="center">  
@@ -125,16 +127,16 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 </p>
 
 <h1 align="left">
-<img src="images/technologies/Browserstack.png" width="25" height="25" alt="Browserstack"/> <a name="Browserstack"><i>Видео выполнение теста на Browserstack</i></a>
+<img src="images/technologies/Browserstack.png" width="25" height="25" alt="Browserstack"/> <a name="Browserstack"><i>Test run on Browserstack</i></a>
 </h1>
 
-### *Видео*
+### *Video*
 
 <p align="center"> 
 <img title="Browserstack Video" src="images/gif/BrowserStackVideoTest.gif" width="450" height="450"  alt="video">   
 </p>
 
-### *Инфостатистика*
+### *Statistics*
 
  <p align="center">  
 <img title="BrowserStack Graphics" src="images/screenshots/BrowserStackWikiGraphs.png">  
@@ -144,6 +146,6 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 <img title="BrowserStack Graphics" src="images/screenshots/BrowserStackWiki.png">  
 </p>
 
-[Наверх ⬆](#наверх)
+[Up ⬆](#up)
 
 
