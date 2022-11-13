@@ -1,4 +1,4 @@
-<h2 align="center">Automated tests for the Wikipedia mobile app <a target="_blank" href="https://www.wikipedia.org/"></a> </h2>
+<h2 align="center">Automated Wikipedia mobile app tests<a target="_blank" href="https://www.wikipedia.org/"></a> </h2>
 
 <p align="center">
 <img title="Wikipedia" src="images/screenshots/WikipediaLogo.png">
@@ -11,12 +11,12 @@
 + [Technology stack](#Technology)
 + [Test cases](#TestCases)
 + [Jenkins build](#Jenkins)
-+ [Launch from the terminal](#SystemProperty)
++ [Launch from Windows terminal](#SystemProperty)
 + [Appium](#Appium)
 + [Android Studio. Mobile device emulator](#AndroidStudio)
 + [Allure Report integration](#AllureReport)
-+ [Notifications on Telegram](#Telegram)
-+ [Video examples from Browserstack](#Browserstack)
++ [Telegram notifications](#Telegram)
++ [Browserstack test run example](#Browserstack)
 
 
 
@@ -45,8 +45,8 @@
 </h1>
 
 - :white_check_mark: Check search functional
-- :white_check_mark: Check search of exact article
-- :white_check_mark: Check exact article header
+- :white_check_mark: Check search of a certain article
+- :white_check_mark: Check a certain article header
 
 <h1 align="left">
 <img src="images/technologies/jenkins.svg" width="25" height="25" alt="Jenkins"/>  <a name="Jenkins"><i>Jenkins build</i></a>
@@ -58,7 +58,7 @@
 </p>
 
 <h1 align="left">
-<img src="images/technologies/terminale.png" width="25" height="25" alt="SystemProperty"/><a name="SystemProperty"><i>Launch from the terminal</i></a>
+<img src="images/technologies/terminale.png" width="25" height="25" alt="SystemProperty"/><a name="SystemProperty"><i>Launch from Windows terminal</i></a>
 </h1>
 
 
@@ -89,7 +89,7 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 <a id="AndroidStudio"></a>
 ## <img alt="AndroidStudio" height="50" src="images/technologies/android-studio-1.svg" width="50"/>AndroidStudio</a>
 
-> *Mobile emulator*
+> *Mobile device emulator*
 
 <img src="images/screenshots/AndroidStudioMain.png" alt="Appium">
 
@@ -127,7 +127,7 @@ clean androidTests -DdeviceHost=${DEVICE_HOST}
 </p>
 
 <h1 align="left">
-<img src="images/technologies/Browserstack.png" width="25" height="25" alt="Browserstack"/> <a name="Browserstack"><i>Test run on Browserstack</i></a>
+<img src="images/technologies/Browserstack.png" width="25" height="25" alt="Browserstack"/> <a name="Browserstack"><i>Browserstack test run example</i></a>
 </h1>
 
 ### *Video*
