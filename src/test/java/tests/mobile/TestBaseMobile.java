@@ -36,13 +36,11 @@ public class TestBaseMobile {
             default:
                 throw new RuntimeException();
         }
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
         Configuration.browserSize = null;
     }
 
     @BeforeEach
     public void beforeEach() {
-
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
 
         Selenide.open();

@@ -8,13 +8,12 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
-@Tag("android")
 @DisplayName("Tests on Android platform")
 public class MobileTests extends TestBaseMobile {
 
-    @DisplayName("Testing mobile app searching")
-    @Tag("android")
     @Test
+    @Tag("android")
+    @DisplayName("Testing mobile app searching")
     void mobileWikiAppSearchTest() {
         step("Type skip", () ->
             wiki.clickOnSkipButton());
@@ -27,8 +26,9 @@ public class MobileTests extends TestBaseMobile {
             wiki.listSearchedContent.shouldHave(sizeGreaterThan(0)));
     }
 
-    @DisplayName("Testing mobile app searching exact article")
     @Test
+    @Tag("android")
+    @DisplayName("Testing mobile app searching exact article")
     void mobileWikiAppSearchTinkoffBankArticleTest() {
         step("Type skip", () ->
             wiki.clickOnSkipButton());
@@ -42,9 +42,9 @@ public class MobileTests extends TestBaseMobile {
         });
     }
 
-    @DisplayName("Testing mobile app searching and open the article")
-    @Tag("android")
     @Test
+    @Tag("android")
+    @DisplayName("Testing mobile app searching and open the article")
     void mobileWikiAppOpenTinkoffArticleTest() {
         step("Type skip", () ->
             wiki.clickOnSkipButton());
